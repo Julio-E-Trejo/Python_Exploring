@@ -16,12 +16,12 @@ while(True):
     # ret: whether frames were grabbed 
     # frame: frame capture
     ret,frame = cam.read()
-
+    frame = cv2.resize(frame, (512,512))
     # filtering
     ps.PencilSketch.__init__(ps,512,512,frame)
 
     # shows the frame
-    cv2.imshow('Exit with c',ps.PencilSketch.renderV2(ps,frame))
+    cv2.imshow('Pencil sketch (Exit with c)',ps.PencilSketch.renderV2(ps,frame))
 
     # change the character in ord() for a different exit key
     if cv2.waitKey(1) & 0xFF == ord('c'):
