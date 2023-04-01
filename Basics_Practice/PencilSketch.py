@@ -17,9 +17,9 @@ class PencilSketch:
         img_gray = cv2.cvtColor(img_rgb, cv2.COLOR_RGB2GRAY)
         img_gray_inv = 255 - img_gray
         img_blur = cv2.GaussianBlur(img_gray_inv, (21,21), 0, 0)
-        img_blend = self.dodgeV2(img_gray, img_blur)
-        if self.canvas is not None:
-            img_blend = cv2.multiply(img_blend, self.canvas, scale=1./256)
+        img_blend = cv2.divide(img_gray, 255-img_blur, scale=256)
+        #if self.canvas is not None:
+            #img_blend = cv2.multiply(img_blend, self.canvas, scale=1./256)
         return cv2.cvtColor(img_blend, cv2.COLOR_GRAY2RGB)
     
     def render(img_rgb):
