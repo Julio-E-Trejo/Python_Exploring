@@ -1,4 +1,4 @@
 import time
-print("General Kenoobi")
+print("General Kenobi")
 time.sleep(1)
-print("Hello there")
+print("Hello there!")
