@@ -18,10 +18,10 @@ while(True):
     ret,frame = cam.read()
 
     # filtering
-    ps.__init__(512,512,frame)
+    ps.PencilSketch.__init__(ps,512,512,frame)
 
     # shows the frame
-    cv2.imshow('Exit with c',ps.renderV2(frame))
+    cv2.imshow('Exit with c',ps.PencilSketch.renderV2(ps,frame))
 
     # change the character in ord() for a different exit key
     if cv2.waitKey(1) & 0xFF == ord('c'):
