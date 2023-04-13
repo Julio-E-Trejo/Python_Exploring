@@ -35,9 +35,9 @@ class defense:
             
             # Setting prior & current position values
             self.x_prev = self.x
-            self.y_prev = self.y
+            self.z_prev = self.z
             self.x = x
-            self.y = z
+            self.z = z
 
 
     
